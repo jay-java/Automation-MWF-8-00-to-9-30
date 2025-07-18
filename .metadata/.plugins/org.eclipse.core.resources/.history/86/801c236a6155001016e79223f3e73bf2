@@ -1,0 +1,8 @@
+package core;
+class ABCP
+
+public class P019_Final {
+	public static void main(String[] args) {
+		
+	}
+}

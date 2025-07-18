@@ -1,0 +1,7 @@
+package basic;
+
+public class P001_OpenBrowser {
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "");
+	}
+}

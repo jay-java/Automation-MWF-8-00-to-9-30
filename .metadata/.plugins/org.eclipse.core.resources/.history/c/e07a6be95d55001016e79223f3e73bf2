@@ -1,0 +1,31 @@
+package core;
+
+class Student {
+	int id;
+	String name;
+	double per;
+	long contact;
+
+	public void setId(int id) {
+		System.out.println("id in set functions : " + id);
+		this.id = id;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void showData() {
+		System.out.println("id : " + id + " name : " + name + " per : " + per + " contact : " + contact);
+	}
+}
+
+public class P018_Encapsulation {
+	public static void main(String[] args) {
+		Student s = new Student();
+		s.setId(13);
+		s.setName("JAVA");
+		s.showData();
+
+	}
+}
