@@ -1,0 +1,26 @@
+package basic;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import driverConnection.DriverConnection;
+
+public class P002_FBCreateAcc {
+	public static void main(String[] args) {
+		String url = "https://www.facebook.com/";
+		WebDriver driver = DriverConnection.getDriver(url);
+		
+		WebElement createAccLink = driver.findElement(By.linkText("Create new account"));
+		createAccLink.click();
+		
+		WebElement firstname = driver.findElement(By.name("firstname"));
+		firstname.sendKeys("selenium");
+		
+		WebElement lastname =  driver.findElement(By.name("lastname"));
+		lastname.sendKeys("testers");
+		
+		WebElement days= driver.findElement(By.id("day"));
+		
+	}
+}

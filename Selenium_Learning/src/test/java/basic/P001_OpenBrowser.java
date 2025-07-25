@@ -1,14 +1,46 @@
 package basic;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class P001_OpenBrowser {
 	public static void main(String[] args) {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Admin\\Downloads\\chromedriver-win64 (1)\\chromedriver-win64\\chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
+		//1.Chrome
+//		System.setProperty("webdriver.chrome.driver",
+//				"C:\\Users\\Admin\\Downloads\\chromedriver-win64 (1)\\chromedriver-win64\\chromedriver.exe");
+//		WebDriver driver = new ChromeDriver();
+		
+		//2.Edge
+//		System.setProperty("webdriver.edge.driver",
+//				"C:\\Users\\Admin\\Downloads\\edgedriver_win64 (1)\\msedgedriver.exe");
+//		WebDriver driver = new EdgeDriver();
+		
+		//3.firefox
+		System.setProperty("webdriver.gecko.driver",
+				"C:\\Users\\Admin\\Downloads\\geckodriver-v0.36.0-win64\\geckodriver.exe");
+		WebDriver driver = new FirefoxDriver();
 		driver.get("https://www.facebook.com/");
+		
 		driver.manage().window().maximize();
-		driver.close();
+		WebElement emailEle = driver.findElement(By.id("email"));
+		emailEle.sendKeys("selenium@gmail.com");
+		WebElement passEle = driver.findElement(By.id("pass"));
+		passEle.sendKeys("pass@123");
+
+		WebElement loginBtn = driver.findElement(By.name("login"));
+		loginBtn.click();
+
+		WebElement errmsg = driver.findElement(By.xpath("//*[@id='loginform']/div[2]/div[2]"));
+		if (errmsg.isDisplayed()) {
+			System.out.println("Error message is displayed: " + errmsg.getText());
+		} else {
+			System.out.println("Error message is not displayed.");
+		}
+		// Optional: Close the browser after actions
+//		driver.close();
 	}
 }

@@ -1,7 +1,0 @@
-package basic;
-
-public class P001_OpenBrowser {
-	public static void main(String[] args) {
-		
-	}
-}

@@ -1,0 +1,32 @@
+package basic;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class P001_OpenBrowser {
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver",
+				"C:\\Users\\Admin\\Downloads\\chromedriver-win64 (1)\\chromedriver-win64\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.facebook.com/");
+		driver.manage().window().maximize();
+		WebElement emailEle = driver.findElement(By.id("email"));
+		emailEle.sendKeys("selenium@gmail.com");
+		WebElement passEle = driver.findElement(By.id("pass"));
+		passEle.sendKeys("pass@123");
+
+		WebElement loginBtn = driver.findElement(By.name("login"));
+		loginBtn.click();
+		
+		WebElement errmsg = driver.findElement(By.xpath("//*[@id="loginform"]/div[2]/div[2]"));
+		if(errmsg.isDisplayed()) {
+            System.out.println("Error message is displayed: " + errmsg.getText());
+        } else {
+            System.out.println("Error message is not displayed.");
+        }
+		// Optional: Close the browser after actions
+//		driver.close();
+	}
+}

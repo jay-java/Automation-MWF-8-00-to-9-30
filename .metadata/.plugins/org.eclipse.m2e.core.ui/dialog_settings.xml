@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\Admin\Automation MWF 8-00\Selenium_Learning\src\test\java\basic\P001_OpenBrowser.java"/>
 			<item value="C:\Users\Admin\Automation MWF 8-00\CoreJAVA\src\core"/>
 		</list>
 		<list key="projectNameTemplate">

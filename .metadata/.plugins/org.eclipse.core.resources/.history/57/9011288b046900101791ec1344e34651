@@ -1,0 +1,14 @@
+package basic;
+
+import org.openqa.selenium.WebDriver;
+
+import driverConnection.DriverConnection;
+
+public class P002_FBCreateAcc {
+	public static void main(String[] args) {
+		String url = "https://www.facebook.com/";
+		WebDriver driver = DriverConnection.getDriver(url);
+		
+		
+	}
+}

@@ -1,0 +1,9 @@
+package driverConnection;
+
+import org.openqa.selenium.WebDriver;
+
+public class DriverConnection {
+	public static WebDriver getDriver(String url) {
+		
+	}
+}
